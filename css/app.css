@@ -1,0 +1,33 @@
+/* General */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Estructura */
+html, 
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+.main-container {
+    max-width: 40em;
+}
+
+/* Header */
+@media (min-width: 45em) {
+  .brand {
+    float: left;
+  }
+}
+
+/* Footer */
+footer {
+    color: rgba(255, 255, 255, .5);
+}
