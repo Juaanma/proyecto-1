@@ -1,3 +1,8 @@
+// Seleccionamos sección por defecto en caso de que URL no especifique
+if (window.location.hash == '') {
+    window.location.hash = '#intro';
+}
+
 // N = poblacion total
 
 // S = susceptibles

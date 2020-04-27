@@ -5,6 +5,22 @@ a:hover {
   color: #fff;
 }
 
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  background-color: #fff;
+  padding: .5rem 1rem;
+  font-weight: 700;
+}
+
+section:target {
+    display: block;
+}
+section:not(:target) {
+    display: none;
+}
+
 /* Estructura */
 html, 
 body {
@@ -27,6 +43,8 @@ body {
     float: left;
   }
 }
+
+/* Intro */
 
 /* Footer */
 footer {
