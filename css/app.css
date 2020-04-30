@@ -38,13 +38,34 @@ body {
 }
 
 /* Header */
+.nav-header .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    border-bottom: .25rem solid transparent;
+}
+
+.nav-header .nav-link:hover {
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-header .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+
+.nav-header .active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
 @media (min-width: 45em) {
   .brand {
     float: left;
   }
+  .nav-header {
+    float: right;
+  }
 }
-
-/* Intro */
 
 /* Footer */
 footer {
