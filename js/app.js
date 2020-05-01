@@ -26,3 +26,29 @@ $(window).on('hashchange', function() {
     checkCurrentSection();
     updateSectionLinks();
 });
+
+// Inicializo canvas 
+var ctx = document.getElementById('simulation-canvas').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [1, 2],
+        datasets: [{
+            label: 'Infectados',
+            backgroundColor: '#f66',
+            borderColor: '#f66',
+            data: [0.5, 1],
+            fill: true
+        }, {
+            label: 'Susceptibles',
+            backgroundColor: '#7fbf7f',
+            borderColor: '#7fbf7f',
+            data: [2, 1],
+            fill: true
+        }, {
+            label: 'Recuperados',
+            backgroundColor: '#202020',
+            borderColor: '#202020',
+        }]
+    }
+});
