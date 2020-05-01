@@ -35,8 +35,26 @@
                 <p class="lead"><a href="#how-it-works" class="btn btn-lg btn-secondary">¿Cómo funciona?</a></p>
             </section>
 
-            <section id="how-it-works">
-                <p class="lead">Para modelar una enfermedad podemos definir los siguientes parámetros: $$S + I + R = N$$</p>
+            <section id="how-it-works" class="text-left">
+                <h6>Modelo SIR</h6>
+                <p>El modelo utilizado, llamado <b>SIR</b>, busca capturar las características de los brotes epidémicos.</p>
+                <p>
+                    Divide a la población en tres grupos:
+                    <ul>
+                        <li>Población susceptible (\(S\)):</li>
+                        <li>Población infectada (\(I\)):</li>
+                        <li>Población recuperada (\(R\)):</li>
+                    </ul> 
+                </p>
+                <p>
+                    Además, define una tasa de transmisión \(b\) y una tasa de recuperación \(g\).
+                    Para describir la evolución de la población se utilizan las ecuaciones diferenciales:
+                    <ul>
+                        <li>\(S'(t) = -bSI\)</li>
+                        <li>\(I'(t) = bSI - gI\)</li>
+                        <li>\(R'(t) = gI\)</li>
+                    </ul> 
+                </p>
             </section>
         </main>
 
