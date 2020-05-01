@@ -14,13 +14,6 @@ a:hover {
   font-weight: 700;
 }
 
-section:target {
-    display: block;
-}
-section:not(:target) {
-    display: none;
-}
-
 /* Estructura */
 html, 
 body {
@@ -35,6 +28,13 @@ body {
 
 .main-container {
     max-width: 40em;
+}
+
+section:target {
+    display: block;
+}
+section:not(:target) {
+    display: none;
 }
 
 /* Header */

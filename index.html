@@ -30,13 +30,29 @@
                 <p class="lead"><a href="#simulation" class="btn btn-lg btn-secondary">Comenzar</a></p>
             </section>
 
-            <section id="simulation">
-                <p class="lead">Ingrese los parámetros:</p>
-                <p class="lead"><a href="#how-it-works" class="btn btn-lg btn-secondary">¿Cómo funciona?</a></p>
+            <section id="simulation" class="text-left">
+                <h3>Parámetros</h3>
+                <div class="form-group">
+                    <label for="population-size">Población total</label>
+                    <input type="range" class="custom-range" min="1" max="100000000" id="population-size">
+
+                    <label for="infected-percentage">Población infectada</label>
+                    <input type="range" class="custom-range" min="1" max="100" id="infected-percentage">
+
+                    <label for="transmission-rate">Tasa de transmisión</label>
+                    <input type="range" class="custom-range" min="1" max="100" id="transmission-rate">
+
+                    <label for="recovery-rate">Tasa de recuperación</label>
+                    <input type="range" class="custom-range" min="1" max="100" id="recovery-rate">
+                </div>
+
+
+                <h3>Simulación</h3>
+                <!-- <p><a href="#how-it-works" class="btn btn-lg btn-secondary">¿Cómo funciona?</a></p> -->
             </section>
 
             <section id="how-it-works" class="text-left">
-                <h6>Modelo SIR</h6>
+                <h5>Modelo SIR</h5>
                 <p>El modelo utilizado, llamado <b>SIR</b>, busca capturar las características de los brotes epidémicos.</p>
                 <p>
                     Divide a la población en tres grupos:
