@@ -14,35 +14,6 @@ a:hover {
   font-weight: 700;
 }
 
-/* General components - Input range */
-.custom-range::-webkit-slider-thumb {
-  background: #ffffff;
-}
-.custom-range::-webkit-slider-thumb:active {
-  background-color: #2e2e2e;
-}
-.custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
-}
-.custom-range::-moz-range-thumb {
-  background: #ffffff;
-}
-.custom-range::-moz-range-thumb:active {
-  background-color: #2e2e2e;
-}
-.custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
-}
-.custom-range::-ms-thumb {
-  background: #ffffff;
-}
-.custom-range::-ms-thumb:active {
-  background-color: #2e2e2e;
-}
-.custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
-}
-
 /* Structure */
 html, 
 body {
@@ -71,11 +42,10 @@ section:not(:target) {
     padding: .25rem 0;
     font-weight: 700;
     color: rgba(255, 255, 255, .5);
-    border-bottom: .25rem solid transparent;
 }
 
 .nav-header .nav-link:hover {
-    border-bottom-color: rgba(255, 255, 255, .25);
+    color: #fff;
 }
 
 .nav-header .nav-link + .nav-link {
@@ -84,7 +54,6 @@ section:not(:target) {
 
 .nav-header .active {
     color: #fff;
-    border-bottom-color: #fff;
 }
 
 @media (min-width: 45em) {
@@ -100,3 +69,34 @@ section:not(:target) {
 footer {
     color: rgba(255, 255, 255, .5);
 }
+
+
+/* Simulation - Input range - Uso vendor prefixes para compatibilidad */
+.custom-range::-webkit-slider-thumb {
+  background: #ffffff;
+}
+.custom-range::-webkit-slider-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+.custom-range::-moz-range-thumb {
+  background: #ffffff;
+}
+.custom-range::-moz-range-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+.custom-range::-ms-thumb {
+  background: #ffffff;
+}
+.custom-range::-ms-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
