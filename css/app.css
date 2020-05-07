@@ -1,4 +1,4 @@
-/* General */
+/* General components */
 a,
 a:focus,
 a:hover {
@@ -14,8 +14,33 @@ a:hover {
   font-weight: 700;
 }
 
-canvas {
-    background-color: 202020;
+/* General components - Input range */
+.custom-range::-webkit-slider-thumb {
+  background: #ffffff;
+}
+.custom-range::-webkit-slider-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+.custom-range::-moz-range-thumb {
+  background: #ffffff;
+}
+.custom-range::-moz-range-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+.custom-range::-ms-thumb {
+  background: #ffffff;
+}
+.custom-range::-ms-thumb:active {
+  background-color: #2e2e2e;
+}
+.custom-range:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
 
 /* Estructura */
