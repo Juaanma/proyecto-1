@@ -8,11 +8,6 @@ function plotConditionsEvolution(conditionsEvolution) {
     const infectedEvolution = conditionsEvolution.map(row => row[1]);
     const recoveredEvolution = conditionsEvolution.map(row => row[2]);
 
-    console.log(labels);
-    console.log(susceptibleEvolution);
-    console.log(infectedEvolution);
-    console.log(recoveredEvolution);
-
     if (chart !== undefined) {
         chart.destroy();
     }
@@ -25,20 +20,41 @@ function plotConditionsEvolution(conditionsEvolution) {
                 label: 'Infectados',
                 backgroundColor: '#f66',
                 borderColor: '#f66',
-                data: infectedEvolution,
-                fill: true
+                data: infectedEvolution
             }, {
+
                 label: 'Susceptibles',
                 backgroundColor: '#7fbf7f',
                 borderColor: '#7fbf7f',
-                data: susceptibleEvolution,
-                fill: true
+                data: susceptibleEvolution
             }, {
                 label: 'Recuperados',
                 backgroundColor: '#202020',
                 borderColor: '#202020',
                 data: recoveredEvolution
             }]
+        },
+        options: {
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Días'
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Población'
+                    }
+                }]
+            }
         }
     });
 }

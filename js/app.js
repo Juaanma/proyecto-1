@@ -33,16 +33,16 @@ $(window).on('hashchange', function() {
 
 const parameters = {
     'population-size': {
-        input: 50
+        input: 24
     },
     'infected-percentage': {
         input: 1
     },
     'transmission-rate': {
-        input: 50
+        input: 12
     },
     'recovery-rate': {
-        input: 10
+        input: 4
     }
 };
 
@@ -110,7 +110,7 @@ function startSimulation() {
 
 startSimulation();
 
-// Recibe evento de actualización de parámetro
+// Ante evento de actualización de parámetro, actualiza UI
 $(document).on('input', '.parameter', function() {
     const range = $(this);
     const parameter = range.attr('id');
@@ -119,6 +119,9 @@ $(document).on('input', '.parameter', function() {
     parameters[parameter].input = input;
     addParameterValueFromInput(parameter);
     updateParameterLabel(parameter);
+});
 
+// Cuando el usuario termina de editar, comienza la simulación
+$(document).on('change', '.parameter', function() {
     startSimulation();
 });

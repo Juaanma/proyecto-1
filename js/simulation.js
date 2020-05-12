@@ -21,7 +21,6 @@ class EulerODESolver {
         return conditionsEvolution;
     }
 
-    // TODO: cómo hacer para que no se hagan negativos?
     advance(currentConditions, currentTime, nextTime) {
         const deltaTime = nextTime - currentTime;
 
