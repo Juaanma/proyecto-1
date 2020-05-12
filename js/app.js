@@ -1,4 +1,4 @@
-// Selecciona sección por defecto en caso que la actual no sea válida
+// Selecciona la sección por defecto en caso que la sección actual no sea válida
 function checkCurrentSection() {
     const section = window.location.hash;
 
@@ -8,7 +8,7 @@ function checkCurrentSection() {
     }
 }
 
-// Actualiza interfaz para mostrar sección actual en nav-header
+// Actualiza header en base a la sección actual
 function updateSectionLinks() {
     const sectionLinks = $('.nav-header a');
     sectionLinks.removeClass('active');
@@ -21,13 +21,13 @@ function updateSectionLinks() {
 checkCurrentSection();
 updateSectionLinks();
 
-// Verifica sección y actualiza links al cambiar de sección
+// Cuando se realiza un cambio de sección, ejecuta los controles necesarios y actualiza la interfaz
 $(window).on('hashchange', function() {
     checkCurrentSection();
     updateSectionLinks();
 });
 
-// Muestra valor actual de parámetros en simulación
+// Cuando se modifican los parámetros de la simulación, actualiza los campos de texto
 $(document).on('input', '.parameter', function() {
     const range = $(this);
     const rangeId = range.attr('id');
@@ -36,13 +36,13 @@ $(document).on('input', '.parameter', function() {
 
     let output;
     switch (rangeId) {
-        case 'population-size': // Realizamos un mapeo no lineal para facilitar el ingreso de este parámetro
+        case 'population-size': // Realizamos un mapeo no lineal para facilitar el ingreso de la población
             const population = Math.pow(input, 4);
             const formattedPopulation = population.toLocaleString();
             output = formattedPopulation;
             break;
         default:
-            output = range.val();
+            output = input; // Para el resto de los parámetros, mostramos el valor ingresado
     }
 
     label.html(output);
