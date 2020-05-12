@@ -8,7 +8,9 @@ function plotConditionsEvolution(conditionsEvolution) {
     const infectedEvolution = conditionsEvolution.map(row => row[1]);
     const recoveredEvolution = conditionsEvolution.map(row => row[2]);
 
-    if (chart !== undefined) {
+    const totalPopulation = susceptibleEvolution[0] + infectedEvolution[0] + recoveredEvolution[0];
+
+    if (chart !== undefined) { // TODO: evitar recrear chart cada vez?
         chart.destroy();
     }
 
@@ -52,6 +54,13 @@ function plotConditionsEvolution(conditionsEvolution) {
                     scaleLabel: {
                         display: true,
                         labelString: 'Población'
+                    },
+                    ticks: {
+                        max: totalPopulation,
+                        // No muestra el último valor en este eje (como fue fijado, podría estar muy cerca al anterior)
+                        callback: function(tick) {
+                            return tick !== totalPopulation ? tick : '';
+                        }
                     }
                 }]
             }

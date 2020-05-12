@@ -33,7 +33,7 @@ $(window).on('hashchange', function() {
 
 const parameters = {
     'population-size': {
-        input: 24
+        input: 30
     },
     'infected-percentage': {
         input: 1
