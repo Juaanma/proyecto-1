@@ -35,17 +35,17 @@
             <section id="simulation" class="text-left">
                 <h3>Parámetros</h3>
                 <div class="form-group">
-                    <label for="population-size">Población total: <span>1</span></label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="1" id="population-size">
+                    <label for="population-size">Población total: <span></span></label>
+                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="population-size">
 
-                    <label for="infected-percentage">Población infectada: <span>1</span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="1" id="infected-percentage">
+                    <label for="infected-percentage">Población infectada: <span></span>%</label>
+                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="infected-percentage">
 
-                    <label for="transmission-rate">Tasa de transmisión: <span>33</span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="33" id="transmission-rate">
+                    <label for="transmission-rate">Tasa de transmisión: <span></span>%</label>
+                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="transmission-rate">
 
-                    <label for="recovery-rate">Tasa de recuperación: <span>60</span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="60" id="recovery-rate">
+                    <label for="recovery-rate">Tasa de recuperación: <span></span>%</label>
+                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="recovery-rate">
                 </div>
 
 
@@ -65,13 +65,14 @@
                         <li>Población infectada (\(I\)):</li>
                         <li>Población recuperada (\(R\)):</li>
                     </ul> 
+                    Donde la población total consta de \(N = S + I + R\) individuos.
                 </p>
                 <p>
                     Además, define una tasa de transmisión \(\beta\) y una tasa de recuperación \(\gamma\).
                     Para describir la evolución de la población se utilizan las ecuaciones diferenciales:
-                    <ul>
-                        <li>\(S'(t) = -\beta SI\)</li>
-                        <li>\(I'(t) = \beta SI - \gamma I\)</li>
+                    <ul id="equations-list">
+                        <li>\(S'(t) = -\displaystyle\frac{\beta SI}{N}\)</li>
+                        <li>\(I'(t) = \displaystyle\frac{\beta SI}{N} - \gamma I\)</li>
                         <li>\(R'(t) = \gamma I\)</li>
                     </ul> 
                 </p>
@@ -92,6 +93,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
     
     <script src="js/simulation.js"></script>
+    <script src="js/plot.js"></script>
     <script src="js/app.js"></script>
   </body>
 

@@ -69,7 +69,6 @@ footer {
     color: rgba(255, 255, 255, .5);
 }
 
-
 /* Simulation - Input range - Uso vendor prefixes para compatibilidad */
 .custom-range::-webkit-slider-thumb {
   background: #ffffff;
@@ -99,3 +98,7 @@ footer {
   box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
 
+/* How it works */
+#equations-list > li {
+  margin-bottom: 1rem;
+}
