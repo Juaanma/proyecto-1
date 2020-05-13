@@ -1,7 +1,7 @@
-import { parameters, setOnParametersChangedListener } from '../view/parameters.js';
+import { parameters } from '../model/parameters.js';
+import { addOnParameterChangedListener } from '../view/parameters.js';
 import { plotConditionsEvolution } from '../view/plot.js';
-import { SIRModel } from '../model/sir-model.js';
-import { ODESolver } from '../model/ode-solver.js';
+import { SIRModel, ODESolver } from '../model/simulation.js';
 
 // Ejecuta una nueva simulación utilizando los parámetros ingresados
 function startSimulation() {
@@ -24,11 +24,11 @@ function startSimulation() {
     plotConditionsEvolution(conditionsEvolution);
 }
 
-function initializeSimulationController() {
+function initializeSimulationController() { // TODO: juntar simulation y parameters controllers?
     startSimulation();
 
     // Cuando el usuario termina de editar, comienza la simulación
-    setOnParametersChangedListener(startSimulation);
+    addOnParameterChangedListener(startSimulation);
 }
 
 export { initializeSimulationController };

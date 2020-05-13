@@ -1,3 +1,5 @@
+// Esta clase no tiene un controlador dado que la lógica es casi trivial, y no está asociada a un modelo
+
 // Selecciona la sección por defecto en caso que la sección actual no sea válida
 function checkCurrentSection() {
     const section = window.location.hash;

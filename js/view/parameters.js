@@ -1,74 +1,40 @@
-const parameters = {
-    'population-size': {
-        input: 30
-    },
-    'infected-percentage': {
-        input: 1
-    },
-    'transmission-rate': {
-        input: 12
-    },
-    'recovery-rate': {
-        input: 4
-    }
-};
-
-function fillDefaultParameters() {
+function initializeParametersView(parameters) {
     for (const parameter in parameters) {
-        updateParameterInput(parameter);
-
-        addParameterValueFromInput(parameter);
-        updateParameterLabel(parameter);
+        updateParameterInput(parameter, parameters[parameter].input);
+        updateParameterLabel(parameter, parameters[parameter].value);
     }
 }
 
-function addParameterValueFromInput(parameter) {
-    const input = parameters[parameter].input;
-    let output;
-
-    switch (parameter) {
-        case 'population-size': // Realizamos un mapeo no lineal para facilitar el ingreso de la población
-            const population = Math.pow(input, 4);
-            output = population;
-            break;
-        default:
-            output = input; // Para el resto de los parámetros, mostramos el valor ingresado
-    }
-
-    parameters[parameter].value = output; // Actualiza objeto con parámetros
-}
-
-function updateParameterLabel(parameter) {
+function updateParameterLabel(parameter, value) {
     const label = $("label[for='" + parameter + "'] > span");
-    const value = parameters[parameter].value;
 
     label.text(value.toLocaleString());
 }
 
-function updateParameterInput(parameter) {
+function updateParameterInput(parameter, input) {
     const inputRange = $('#' + parameter);
-    const value = parameters[parameter].input;
 
-    inputRange.val(value)
+    inputRange.val(input)
 }
 
-function initializeParameters() {
-    fillDefaultParameters();
-
-    // Ante evento de actualización de parámetro, actualiza UI
+function addOnParameterInputListener(listener) {
     $(document).on('input', '.parameter', function() {
         const range = $(this);
         const parameter = range.attr('id');
         const input = range.val();
 
-        parameters[parameter].input = input;
-        addParameterValueFromInput(parameter);
-        updateParameterLabel(parameter);
+        listener(parameter, input);
     });
 }
 
-function setOnParametersChangedListener(listener) {
-    $(document).on('change', '.parameter', listener);
+function addOnParameterChangedListener(listener) {
+    $(document).on('change', '.parameter', function() {
+        const range = $(this);
+        const parameter = range.attr('id');
+        const input = range.val();
+
+        listener(parameter, input);
+    });
 }
 
-export { parameters, initializeParameters, setOnParametersChangedListener };
+export { initializeParametersView, addOnParameterInputListener, addOnParameterChangedListener, updateParameterLabel, updateParameterInput };
