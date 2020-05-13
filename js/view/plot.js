@@ -1,4 +1,3 @@
-// Inicializo canvas 
 const ctx = document.getElementById('simulation-canvas').getContext('2d');
 let chart;
 
@@ -57,7 +56,7 @@ function plotConditionsEvolution(conditionsEvolution) {
                     },
                     ticks: {
                         max: totalPopulation,
-                        // No muestra el último valor en este eje (como fue fijado, podría estar muy cerca al anterior)
+                        // Oculta el último valor en este eje (como fue fijado en max, podría estar muy cerca al anterior)
                         callback: function(tick) {
                             return tick !== totalPopulation ? tick : '';
                         }
@@ -67,3 +66,5 @@ function plotConditionsEvolution(conditionsEvolution) {
         }
     });
 }
+
+export { plotConditionsEvolution };
