@@ -20,7 +20,7 @@
 
   <body class="text-center">
     <div class="main-container d-flex flex-column h-100 mx-auto p-3">
-        <header class="mb-auto">
+        <header class="mb-auto pb-3">
             <h3 class="brand mb-0">infesim</h3>
             <nav class="nav nav-header justify-content-center">
                 <a class="nav-link" href="#intro">Inicio</a>
@@ -44,7 +44,7 @@
                     <label for="population-size">Población total: <span></span></label>
                     <input type="range" class="parameter custom-range" min="1" max="100" value="" id="population-size">
 
-                    <label for="infected-percentage">Población infectada: <span></span>%</label>
+                    <label for="infected-percentage">Población infectada inicialmente: <span></span>%</label>
                     <input type="range" class="parameter custom-range" min="1" max="100" value="" id="infected-percentage">
 
                     <label for="transmission-rate">Tasa de transmisión: <span></span>%</label>
@@ -57,29 +57,48 @@
 
                 <h3>Simulación</h3>
                 <canvas id="simulation-canvas" class="w-100"></canvas>
-
-                <!-- <p><a href="#how-it-works" class="btn btn-lg btn-secondary">¿Cómo funciona?</a></p> -->
             </section>
 
             <section id="how-it-works" class="text-left">
                 <h5>Modelo SIR</h5>
-                <p>El modelo utilizado, llamado <b>SIR</b>, busca capturar las características de los brotes epidémicos.</p>
+                <p>
+                    El modelo utilizado, llamado <b>SIR</b>, busca capturar las características de los brotes epidémicos.
+                </p>
+                <h6>Población</h6>
                 <p>
                     Divide a la población en tres grupos:
                     <ul>
-                        <li>Población susceptible (\(S\)):</li>
-                        <li>Población infectada (\(I\)):</li>
-                        <li>Población recuperada (\(R\)):</li>
+                        <li>Población <b>susceptible</b> (\(S\)): individuos que pueden ser contagiados.</li>
+                        <li>Población <b>infectada</b> (\(I\)): individuos que tienen la enfermedad.</li>
+                        <li>Población <b>recuperada</b> (\(R\)): invividuos que ya no tienen la enfermedad.</li>
                     </ul> 
-                    Donde la población total consta de \(N = S + I + R\) individuos.
+                    Es decir, la población total consta de \(N = S + I + R\) individuos.
+                    Además, define una tasa de <b>transmisión</b> \(\beta\) y una tasa de <b>recuperación</b> \(\gamma\).
                 </p>
+
+                <h6>Evolución</h6>
                 <p>
-                    Además, define una tasa de transmisión \(\beta\) y una tasa de recuperación \(\gamma\).
-                    Para describir la evolución de la población se utilizan las ecuaciones diferenciales:
+                    La evolución de la población se ve reflejada en el siguiente diagrama: 
+                    \[\text{Susceptibles} \xrightarrow{\beta SI / N} \text{Infectados} \xrightarrow{\gamma I} \text{Recuperados}\]
+
+                    O, de forma equivalente, se definen las ecuaciones diferenciales:
                     <ul id="equations-list">
                         <li>\(S'(t) = -\displaystyle\frac{\beta SI}{N}\)</li>
                         <li>\(I'(t) = \displaystyle\frac{\beta SI}{N} - \gamma I\)</li>
                         <li>\(R'(t) = \gamma I\)</li>
+                    </ul> 
+                </p>
+
+                <h5>Simulación</h5>
+                <p>
+                    La simulación entonces se resume a resolver este sistema de ecuaciones. <br>
+                    En particular, se trata de un sistema de ecuaciones diferenciales ordinarias
+                    (ODE, por sus siglas en inglés), que puede resolverse fácilmente con el <b>método de Euler</b>. <br>
+                    Este método consta de tomar pequeños pasos, sumando el valor de la pendiente:
+                    <ul id="equations-list">
+                        <li>\(S(t + \Delta t) = S(t) -\displaystyle\frac{\beta SI}{N} \Delta t \)</li>
+                        <li>\(I(t + \Delta t) = I(t) + (\displaystyle\frac{\beta SI}{N} - \gamma I) \Delta t \)</li>
+                        <li>\(R(t + \Delta t) = R(t) + \gamma I \Delta t\)</li>
                     </ul> 
                 </p>
             </section>
