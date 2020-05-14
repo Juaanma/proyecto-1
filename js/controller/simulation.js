@@ -1,6 +1,6 @@
 import { parameters } from '../model/parameters.js';
 import { addOnParameterChangedListener } from '../view/parameters.js';
-import { plotConditionsEvolution } from '../view/plot.js';
+import { initializePlot, plotConditionsEvolution } from '../view/plot.js';
 import { SIRModel, ODESolver } from '../model/simulation.js';
 
 // Ejecuta una nueva simulación utilizando los parámetros ingresados
@@ -25,6 +25,8 @@ function startSimulation() {
 }
 
 function initializeSimulationController() { // TODO: juntar simulation y parameters controllers?
+    initializePlot();
+
     startSimulation();
 
     // Cuando el usuario termina de editar, comienza la simulación
