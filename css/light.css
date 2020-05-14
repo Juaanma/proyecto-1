@@ -1,0 +1,79 @@
+/* Structure */
+body {
+    background-color: #fff;
+    color: #353535;
+}
+
+/* Header */
+.nav-header .nav-link {
+    color: rgba(0, 0, 0, .5);
+}
+
+.nav-header .nav-link:hover {
+    color: #353535;
+}
+
+.nav-header .active {
+    color: #353535;
+}
+
+/* Footer */
+footer {
+    color: rgba(0, 0, 0, .5);
+}
+
+/* Generic components */
+a,
+a:focus,
+a:hover {
+  color: #353535;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #ddd;
+  background-color: #353535;
+}
+
+/* Light / dark theme - Custom-control-input */
+/* Son muchas las reglas con especificidad de Bootstrap, utilizar !important sería otra alternativa. */
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:not(:checked) ~ .custom-control-label::before,
+.custom-control-input:focus ~ .custom-control-label::before,
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: none;
+}
+
+/* Simulation - Input range */
+/* Uso vendor prefixes para compatibilidad */
+.custom-range::-webkit-slider-thumb {
+  background-color: #353535;
+}
+.custom-range::-webkit-slider-thumb:active {
+  background-color: #ddd;
+}
+.custom-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #353535, 0 0 0 0.2rem rgba(0, 0, 0, .25);
+}
+.custom-range::-moz-range-thumb {
+  background-color: #353535;
+}
+.custom-range::-moz-range-thumb:active {
+  background-color: #ddd;
+}
+.custom-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #353535, 0 0 0 0.2rem rgba(0, 0, 0, .25);
+}
+.custom-range::-ms-thumb {
+  background-color: #353535;
+}
+.custom-range::-ms-thumb:active {
+  background-color: #ddd;
+}
+.custom-range:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #353535, 0 0 0 0.2rem rgba(0, 0, 0, .25);
+}

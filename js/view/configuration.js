@@ -11,7 +11,8 @@ function updateLightModeSwitch(enabled) {
 }
 
 function updateLightMode(enabled) {
-    $(document.documentElement).attr('data-theme', enabled ? 'light' : 'dark');
+    const mode = enabled ? 'light' : 'dark';
+    $('#theme').prop('href', 'css/' + mode + '.css');
 }
 
 function addOnLightModeChangedListener(listener) {
