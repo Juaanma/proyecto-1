@@ -8,7 +8,7 @@
 }
 
 [data-theme="light"] {
-  --primary-color: #aaa;
+  --primary-color: #ddd;
   --secondary-color: rgba(0, 0, 0, .5);
   --font-color: #353535;
   --font-color-light: rgba(0, 0, 0, .25);
@@ -106,28 +106,28 @@ a:hover {
 
 /* Simulation - Input range - Uso vendor prefixes para compatibilidad */
 .custom-range::-webkit-slider-thumb {
-  background: var(--font-color);
+  background-color: var(--font-color);
 }
 .custom-range::-webkit-slider-thumb:active {
-  background-color: var(--bg-color);
+  background-color: var(--primary-color);
 }
 .custom-range:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 1px var(--font-color), 0 0 0 0.2rem var(--font-color-light);
 }
 .custom-range::-moz-range-thumb {
-  background: var(--font-color);
+  background-color: var(--font-color);
 }
 .custom-range::-moz-range-thumb:active {
-  background-color: var(--bg-color);
+  background-color: var(--primary-color);
 }
 .custom-range:focus::-moz-range-thumb {
   box-shadow: 0 0 0 1px var(--font-color), 0 0 0 0.2rem var(--font-color-light);
 }
 .custom-range::-ms-thumb {
-  background: var(--font-color);
+  background-color: var(--font-color);
 }
 .custom-range::-ms-thumb:active {
-  background-color: var(--font-color);
+  background-color: var(--primary-color);
 }
 .custom-range:focus::-ms-thumb {
   box-shadow: 0 0 0 1px var(--font-color), 0 0 0 0.2rem var(--font-color-light);
