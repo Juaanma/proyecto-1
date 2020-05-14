@@ -61,6 +61,10 @@ function initializePlot() {
                         return datasetLabel + ": " + yLabel;
                     }
                 }
+            },
+            legend: {
+                // Deshabilito funcionalidad para ocultar curvas
+                onClick: () => false
             }
         }
     });
