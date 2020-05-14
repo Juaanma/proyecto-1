@@ -72,7 +72,7 @@
                         <li>Población <b>infectada</b> (\(I\)): individuos que tienen la enfermedad.</li>
                         <li>Población <b>recuperada</b> (\(R\)): invividuos que ya no tienen la enfermedad.</li>
                     </ul> 
-                    Es decir, la población total consta de \(N = S + I + R\) individuos.
+                    Es decir, la población total consta de \(N = S(t) + I(t) + R(t)\) individuos.
                     Además, define una tasa de <b>transmisión</b> \(\beta\) y una tasa de <b>recuperación</b> \(\gamma\).
                 </p>
 
@@ -83,9 +83,9 @@
 
                     O, de forma equivalente, se definen las ecuaciones diferenciales:
                     <ul id="equations-list">
-                        <li>\(S'(t) = -\displaystyle\frac{\beta SI}{N}\)</li>
-                        <li>\(I'(t) = \displaystyle\frac{\beta SI}{N} - \gamma I\)</li>
-                        <li>\(R'(t) = \gamma I\)</li>
+                        <li>\(\displaystyle \frac{dS}{dt} = -\frac{\beta SI}{N}\)</li>
+                        <li>\(\displaystyle \frac{dI}{dt} = \frac{\beta SI}{N} - \gamma I\)</li>
+                        <li>\(\displaystyle \frac{dR}{dt} = \gamma I\)</li>
                     </ul> 
                 </p>
 
@@ -94,11 +94,11 @@
                     La simulación entonces se resume a resolver este sistema de ecuaciones. <br>
                     En particular, se trata de un sistema de ecuaciones diferenciales ordinarias
                     (ODE, por sus siglas en inglés), que puede resolverse fácilmente con el <b>método de Euler</b>. <br>
-                    Este método consta de tomar pequeños pasos, sumando el valor de la pendiente:
+                    Este método consta de tomar pequeños pasos, sumando a la variable el incremento estimado por la pendiente:
                     <ul id="equations-list">
-                        <li>\(S(t + \Delta t) = S(t) -\displaystyle\frac{\beta SI}{N} \Delta t \)</li>
-                        <li>\(I(t + \Delta t) = I(t) + (\displaystyle\frac{\beta SI}{N} - \gamma I) \Delta t \)</li>
-                        <li>\(R(t + \Delta t) = R(t) + \gamma I \Delta t\)</li>
+                        <li>\(\displaystyle S(t + \Delta t) \approx S(t) + \frac{dS}{dt}(t) \Delta t\)</li>
+                        <li>\(\displaystyle I(t + \Delta t) \approx I(t) + \frac{dI}{dt}(t) \Delta t\)</li>
+                        <li>\(\displaystyle R(t + \Delta t) \approx I(t) + \frac{dR}{dt}(t) \Delta t\)</li>
                     </ul> 
                 </p>
             </section>
