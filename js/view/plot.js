@@ -6,16 +6,18 @@ function initializePlot() {
         type: 'line',
         data: {
             datasets: [{
-                label: 'Infectados',
-                backgroundColor: '#f66',
-                borderColor: '#f66'
-            }, {
-
                 label: 'Susceptibles',
+                order: 1,
                 backgroundColor: '#7fbf7f',
                 borderColor: '#7fbf7f'
             }, {
+                label: 'Infectados',
+                order: 0,
+                backgroundColor: '#f66',
+                borderColor: '#f66'
+            },  {
                 label: 'Recuperados',
+                order: 2,
                 backgroundColor: '#202020',
                 borderColor: '#202020'
             }]
