@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 
   <head>
     <meta charset="utf-8">
@@ -45,16 +45,16 @@
 
                 <div class="form-group">
                     <label for="population-size">Población total: <span></span></label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="population-size">
+                    <input type="range" class="parameter custom-range" min="1" max="100" id="population-size">
 
                     <label for="infected-percentage">Población infectada inicialmente: <span></span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="infected-percentage">
+                    <input type="range" class="parameter custom-range" min="1" max="100" id="infected-percentage">
 
                     <label for="transmission-rate">Tasa de transmisión: <span></span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="transmission-rate">
+                    <input type="range" class="parameter custom-range" min="1" max="100" id="transmission-rate">
 
                     <label for="recovery-rate">Tasa de recuperación: <span></span>%</label>
-                    <input type="range" class="parameter custom-range" min="1" max="100" value="" id="recovery-rate">
+                    <input type="range" class="parameter custom-range" min="1" max="100" id="recovery-rate">
                 </div>
 
 
@@ -71,11 +71,13 @@
                 <h6>Población</h6>
                 <p>
                     Divide a la población en tres grupos:
-                    <ul>
-                        <li>Población <b>susceptible</b> (\(S\)): individuos que pueden ser contagiados.</li>
-                        <li>Población <b>infectada</b> (\(I\)): individuos que tienen la enfermedad.</li>
-                        <li>Población <b>recuperada</b> (\(R\)): invividuos que ya no tienen la enfermedad.</li>
-                    </ul> 
+                </p>
+                <ul>
+                    <li>Población <b>susceptible</b> (\(S\)): individuos que pueden ser contagiados.</li>
+                    <li>Población <b>infectada</b> (\(I\)): individuos que tienen la enfermedad.</li>
+                    <li>Población <b>recuperada</b> (\(R\)): invividuos que ya no tienen la enfermedad.</li>
+                </ul> 
+                <p>
                     Es decir, la población total consta de \(N = S(t) + I(t) + R(t)\) individuos.
                     Además, define una tasa de <b>transmisión</b> \(\beta\) y una tasa de <b>recuperación</b> \(\gamma\).
                 </p>
@@ -86,12 +88,12 @@
                     \[\text{Susceptibles} \xrightarrow{\beta SI / N} \text{Infectados} \xrightarrow{\gamma I} \text{Recuperados}\]
 
                     O, de forma equivalente, se definen las ecuaciones diferenciales:
-                    <ul id="equations-list">
-                        <li>\(\displaystyle \frac{dS}{dt} = -\frac{\beta SI}{N}\)</li>
-                        <li>\(\displaystyle \frac{dI}{dt} = \frac{\beta SI}{N} - \gamma I\)</li>
-                        <li>\(\displaystyle \frac{dR}{dt} = \gamma I\)</li>
-                    </ul> 
                 </p>
+                <ul class="equations-list">
+                    <li>\(\displaystyle \frac{dS}{dt} = -\frac{\beta SI}{N}\)</li>
+                    <li>\(\displaystyle \frac{dI}{dt} = \frac{\beta SI}{N} - \gamma I\)</li>
+                    <li>\(\displaystyle \frac{dR}{dt} = \gamma I\)</li>
+                </ul> 
 
                 <h5>Simulación</h5>
                 <p>
@@ -99,12 +101,12 @@
                     En particular, se trata de un sistema de ecuaciones diferenciales ordinarias
                     (ODE, por sus siglas en inglés), que puede resolverse fácilmente con el <b>método de Euler</b>. <br>
                     Este método consta de tomar pequeños pasos, sumando a la variable el incremento estimado por la pendiente:
-                    <ul id="equations-list">
-                        <li>\(\displaystyle S(t + \Delta t) \approx S(t) + \frac{dS}{dt}(t) \Delta t\)</li>
-                        <li>\(\displaystyle I(t + \Delta t) \approx I(t) + \frac{dI}{dt}(t) \Delta t\)</li>
-                        <li>\(\displaystyle R(t + \Delta t) \approx I(t) + \frac{dR}{dt}(t) \Delta t\)</li>
-                    </ul> 
                 </p>
+                <ul class="equations-list">
+                    <li>\(\displaystyle S(t + \Delta t) \approx S(t) + \frac{dS}{dt}(t) \Delta t\)</li>
+                    <li>\(\displaystyle I(t + \Delta t) \approx I(t) + \frac{dI}{dt}(t) \Delta t\)</li>
+                    <li>\(\displaystyle R(t + \Delta t) \approx I(t) + \frac{dR}{dt}(t) \Delta t\)</li>
+                </ul> 
             </section>
         </main>
 

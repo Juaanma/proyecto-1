@@ -71,7 +71,7 @@ footer {
 }
 
 /* How it works */
-#equations-list > li {
+.equations-list > li {
   margin-bottom: 1rem;
 }
 
