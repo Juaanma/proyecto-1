@@ -94,6 +94,8 @@ a:hover {
   font-weight: 700;
 }
 
+/* Light / dark theme - Custom-control-input */
+/* Son muchas las reglas con especificidad de Bootstrap, utilizar !important sería otra alternativa. */
 .custom-control-input:checked ~ .custom-control-label::before,
 .custom-control-input:not(:checked) ~ .custom-control-label::before,
 .custom-control-input:focus ~ .custom-control-label::before,
@@ -104,7 +106,8 @@ a:hover {
   box-shadow: none;
 }
 
-/* Simulation - Input range - Uso vendor prefixes para compatibilidad */
+/* Simulation - Input range */
+/* Uso vendor prefixes para compatibilidad */
 .custom-range::-webkit-slider-thumb {
   background-color: var(--font-color);
 }
