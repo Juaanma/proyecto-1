@@ -19,7 +19,7 @@ function startSimulation() {
     const solver = new ODESolver(model);
 
     const timePoints = [...Array(300).keys()];
-    const conditionsEvolution = solver.solve(timePoints); // TODO: redondear valores para plot
+    const conditionsEvolution = solver.solve(timePoints);
 
     plotConditionsEvolution(conditionsEvolution);
 }

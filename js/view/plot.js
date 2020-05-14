@@ -36,11 +36,6 @@ function plotConditionsEvolution(conditionsEvolution) {
             }]
         },
         options: {
-            elements: {
-                point: {
-                    radius: 0
-                }
-            },
             scales: {
                 xAxes: [{
                     scaleLabel: {
@@ -62,6 +57,24 @@ function plotConditionsEvolution(conditionsEvolution) {
                         }
                     }
                 }]
+            },
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            hover: {
+                intersect: false
+            },
+            tooltips: {
+                callbacks: {
+                    // Redondea valores en el eje y para mejor comprensión del usuario
+                    label: function(tooltipItem, data) {
+                        const datasetLabel = data.datasets[tooltipItem.datasetIndex].label;
+                        const yLabel = Math.round(tooltipItem.yLabel);
+                        return datasetLabel + ": " + yLabel;
+                    }
+                }
             }
         }
     });
