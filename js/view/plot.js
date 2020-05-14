@@ -1,6 +1,9 @@
+// Vista para el resultado de la simulación
+
 const ctx = document.getElementById('simulation-canvas').getContext('2d');
 let chart;
 
+// Crea al objeto chart, estableciendo su configuración
 function initializePlot() {
     chart = new Chart(ctx, {
         type: 'line',
@@ -68,8 +71,9 @@ function updatePlot(labels, datasets, maxY) {
     const data = chart.data;
     const ticks = chart.options.scales.yAxes[0].ticks;
 
-    // Seteo labels para eje X y datos
+    // Seteo labels para eje X
     data.labels = labels;
+    // Seteo datos
     for (let i = 0; i < datasets.length; i++) {
         data.datasets[i].data = datasets[i];
     }
@@ -82,7 +86,8 @@ function updatePlot(labels, datasets, maxY) {
     chart.update();
 }
 
-// Recibe una matriz con la evolución de las variables, y la convierte al formato necesario para que sea graficada
+// Recibe una matriz con la evolución de las variables.
+// La convierte al formato necesario para que sea graficada, y actualiza el gráfico.
 function plotConditionsEvolution(conditionsEvolution) {
     const labels = [...conditionsEvolution.keys()];
 

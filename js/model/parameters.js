@@ -1,3 +1,5 @@
+// Modelo para los parámetros de la simulación
+
 let parameters;
 
 const defaultParameters = {
@@ -20,8 +22,8 @@ function setParameterInput(parameter, input) {
     parameters[parameter].value = mapInputToValue(parameter, input);
 }
 
-// Realizamos un mapeo no lineal para facilitar el ingreso de la población
-// Para el resto de los parámetros, mostramos el valor ingresado
+// Realizamos un mapeo no lineal para facilitar el ingreso de la población.
+// Para el resto de los parámetros, mostramos el valor ingresado.
 function mapInputToValue(parameter, input) {
     return parameter === 'population-size' ? Math.pow(input, 4) : input;
 }

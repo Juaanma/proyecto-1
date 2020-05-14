@@ -1,3 +1,6 @@
+// Modelo para la simulación
+
+// ODESolver: se encarga de resolver un sistema de ecuaciones diferenciales ordinarias
 class ODESolver {
     constructor(model) {
         this.size = model.size;
@@ -5,6 +8,7 @@ class ODESolver {
         this.equations = model.equations;
     }
 
+    // Para cada instante de tiempo, calcula los siguientes valores utilizando advance
     solve(timePoints) {
         const conditionsEvolution = [this.initialConditions];
 
@@ -21,6 +25,7 @@ class ODESolver {
         return conditionsEvolution;
     }
 
+    // Suma a cada variable (condition) su derivada multiplicado por delta t
     advance(currentConditions, currentTime, nextTime) {
         const deltaTime = nextTime - currentTime;
 
@@ -34,6 +39,7 @@ class ODESolver {
     }
 }
 
+// SIRModel: encapsula las ecuaciones del modelo SIR
 class SIRModel {
     constructor(susceptible, infected, recovered, transmissionRate, recoveryRate) {
         this.size = 3;

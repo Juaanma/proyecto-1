@@ -1,3 +1,5 @@
+// Vista para la configuración de la app (actualmente, light / dark mode)
+
 function initializeConfigurationView(configuration) {
     updateLightModeSwitch(configuration.lightMode);
     updateLightMode(configuration.lightMode);
