@@ -9,7 +9,7 @@ En particular, se utiliza el [modelo SIR](https://en.wikipedia.org/wiki/Compartm
 
 * Población susceptible (S): individuos que pueden ser contagiados.
 * Población infectada (I): individuos que tienen la enfermedad.
-* Población recuperada (R): invividuos que ya no tienen la enfermedad.
+* Población recuperada (R): individuos que ya no tienen la enfermedad.
 
 La evolución de la población se modela mediante un [conjunto de ecuaciones diferenciales](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model_without_vital_dynamics).
 
