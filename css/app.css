@@ -1,0 +1,46 @@
+/* Structure */
+html, 
+body {
+    height: 100%;
+}
+
+.main-container {
+    max-width: 40em;
+}
+
+section:target {
+    display: block;
+}
+section:not(:target) {
+    display: none;
+}
+
+/* Header */
+.nav-header .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+}
+
+.nav-header .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+
+@media (min-width: 45em) {
+  .brand {
+    float: left;
+  }
+  .nav-header {
+    float: right;
+  }
+}
+
+/* How it works */
+.equations-list > li {
+  margin-bottom: 1rem;
+}
+
+/* Generic components */
+.btn-lg {
+  padding: .5rem 1rem;
+  font-weight: 700;
+}
