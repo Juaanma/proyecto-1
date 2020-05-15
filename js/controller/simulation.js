@@ -11,8 +11,8 @@ function startSimulation() {
     const populationSize = parameters['population-size'].value;
     const infectedPercentage = parameters['infected-percentage'].value / 100;
 
-    const susceptible = populationSize * (1 - infectedPercentage);
-    const infected = populationSize * infectedPercentage;
+    const susceptible = Math.round(populationSize * (1 - infectedPercentage));
+    const infected = populationSize - susceptible;
     const recovered = 0;
 
     const transmissionRate = parameters['transmission-rate'].value / 100;
